@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: helvetica;
+  text-align: center;
+}
+
+#header {
+  background-color: orange;
+  margin-bottom: 10px;
+  font-size: 40px;
+  height: 60px;
+}
+
+#board {
+  background-image: url(board1.png);
+  background-repeat: no-repeat;
+  height: 480px;
+  width:480px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: yellow;
+}
+
+#status {
+  background-color: blue;
+  margin-bottom: 10px;
+  font-size: 30px;
+  height: 40px;
+}
+
+#buttonwrapper {
+  background-color:grey;
+  margin: 0 auto;
+  width: 35%;
+}
+
+#quit {
+  background-color: red;
+  height: 50px;
+  font-size: 20px;
+  width: 120px;
+  margin: 10px;
+  float: left;
+}
+
+#playagain {
+  background-color: green;
+  height: 50px;
+  font-size: 20px;
+  width: 120px;
+  margin: 10px;
+  float: left;
+}
