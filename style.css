@@ -15,16 +15,6 @@ body {
   height: 60px;
 }
 
-#board {
-  background-image: url(board1.png);
-  background-repeat: no-repeat;
-  height: 480px;
-  width:480px;
-  margin: 0 auto;
-  padding: 10px;
-  background-color: yellow;
-}
-
 #status {
   background-color: blue;
   margin-bottom: 10px;
@@ -32,10 +22,155 @@ body {
   height: 40px;
 }
 
+#board {
+  height: 600px;
+  width:600px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: yellow;
+  position: relative;
+}
+
+#topleft {
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: absolute;
+  top: 0px;
+  bottom: 400px;
+  left: 0px;
+  right: 400px;
+}
+
+#middleleft {
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: absolute;
+  top: 200px;
+  bottom:200px;
+  left: 0px;
+  right: 400px;
+}
+
+#bottomleft {
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: absolute;
+  top: 400px;
+  bottom: 0px;
+  left: 0px;
+  right: 400px;
+}
+
+#topcenter {
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: absolute;
+  top: 0px;
+  bottom:400px;
+  left: 200px;
+  right: 200px;
+}
+
+#middlecenter {
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: absolute;
+  top: 200px;
+  bottom:200px;
+  left: 200px;
+  right: 200px;
+}
+
+#bottomcenter {
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: absolute;
+  top: 400px;
+  bottom:0px;
+  left: 200px;
+  right: 200px;
+}
+
+#topright {
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: absolute;
+  top: 0px;
+  bottom:400px;
+  left: 400px;
+  right: 0px;
+
+}
+
+#middleright {
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: absolute;
+  top: 200px;
+  bottom:200px;
+  left: 400px;
+  right: 0px;
+}
+
+#bottomright {
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: absolute;
+  top: 400px;
+  bottom:0px;
+  left: 400px;
+  right: 0px;
+}
+`
 #buttonwrapper {
   background-color:grey;
-  margin: 0 auto;
-  width: 35%;
+  position: absolute;
+  margin-top: 20px;
 }
 
 #quit {
