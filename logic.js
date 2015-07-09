@@ -63,21 +63,19 @@ var board = [['', '', ''],
             ['', '', ''],
             ['', '', '']];
 
-var winner;
-var currentTurn = "X";
-var counter = 0;
-
-var getFirstMove = function(move) {
-    console.log('Hello, Player X! Please make your first move.');
-};
-
-//getFirstMove(); //If playing in console, run this first.
+var currentTurn = 'X';
 
 var playerMove = function (player, row, col) {
   board[row][col] = player;
-  //console.log ('Here is your move on the board:  ' + board);
   return board;
 };
+
+var changeTurn = function () {
+  if (currentTurn === 'X') {
+    currentTurn = 'O';
+  }
+  else currentTurn = 'X';
+}
 
 //to test for a horizontal win:
 // playerMove ('X', 0, 0);
@@ -113,11 +111,9 @@ var checkRows = function(player) {
      (board[2][0] === player &&
       board[2][1] === player &&
       board[2][2] === player)){
-    winner = player;
+    return true;
   }
 };
-
-checkRows('O');
 
 var checkCols = function(player) {
   //checks for vertical wins
@@ -130,11 +126,9 @@ var checkCols = function(player) {
      (board[0][2] === player &&
       board[1][2] === player &&
       board[2][2] === player)){
-    winner = player;
+    return true;
   }
 };
-
-checkCols('O');
 
 var checkDiag = function(player) {
   //checks for diagonal wins
@@ -144,13 +138,23 @@ var checkDiag = function(player) {
      (board[0][2] === player &&
       board[1][1] === player &&
       board[2][0] === player)) {
-    winner = player;
+    return true;
   }
 };
 
-// var isWinner = function(player) {
-//   return checkCols(player) || checkRows(player) || checkDiag(player);
-// };
+var isWinner = function(player) {
+  return checkCols(player) || checkRows(player) || checkDiag(player);
+};
+
+var getWinner = function(){
+  if (isWinner('X')) {
+    return 'X';
+  }
+  if (isWinner('O')) {
+    return 'O';
+  }
+  return null;
+};
 
 var resetBoard = function(){
   board = [['', '', ''],
