@@ -63,21 +63,21 @@ var board = [['', '', ''],
             ['', '', ''],
             ['', '', '']];
 
+var winner;
 var currentTurn = "X";
 var counter = 0;
-var winner;
 
 var getFirstMove = function(move) {
     console.log('Hello, Player X! Please make your first move.');
 };
 
-//getFirstMove(); //RUN THIS FIRST
+//getFirstMove(); //If playing in console, run this first.
 
 var playerMove = function (player, row, col) {
-    board[row][col] = player;
-    //console.log ('Here is your move on the board:  ' + board);
-     return board;
-    };
+  board[row][col] = player;
+  //console.log ('Here is your move on the board:  ' + board);
+  return board;
+};
 
 //to test for a horizontal win:
 // playerMove ('X', 0, 0);
@@ -103,52 +103,74 @@ var playerMove = function (player, row, col) {
 
 
 var checkRows = function(player) {
-      //checks for horizontal wins first
-      if (board[0][0] === player && board[0][1] === player && board[0][2] === player) {
-          winner = player;
-          console.log(winner + ' wins!');
-      }
-      else if (board[1][0] === player && board[1][1] === player && board[1][2] === player) {
-          winner = player;
-          console.log(winner + ' wins!');
-      }
-      else if (board[2][0] === player && board[2][1] === player && board[2][2] === player) {
-          winner = player;
-          console.log(winner + ' wins!');
-      }
+  //checks for horizontal wins first
+  if ((board[0][0] === player &&
+      board[0][1] === player &&
+      board[0][2] === player) ||
+     (board[1][0] === player &&
+      board[1][1] === player &&
+      board[1][2] === player) ||
+     (board[2][0] === player &&
+      board[2][1] === player &&
+      board[2][2] === player)){
+    winner = player;
+  }
 };
 
 checkRows('O');
 
 var checkCols = function(player) {
-      //checks for vertical wins
-      if (board[0][0] === player && board[1][0] === player && board[2][0] === player) {
-          winner = player;
-        console.log(winner + ' wins!');
-      }
-      else if (board[0][1] === player && board[1][1] === player && board[2][1] === player) {
-          winner = player;
-        console.log(winner + ' wins!');
-      }
-      else if (board[0][2] === player && board[1][2] === player && board[2][2] === player) {
-          winner = player;
-        console.log(winner + ' wins!');
-      }
+  //checks for vertical wins
+  if ((board[0][0] === player &&
+      board[1][0] === player &&
+      board[2][0] === player) ||
+     (board[0][1] === player &&
+      board[1][1] === player &&
+      board[2][1] === player) ||
+     (board[0][2] === player &&
+      board[1][2] === player &&
+      board[2][2] === player)){
+    winner = player;
+  }
 };
 
 checkCols('O');
 
 var checkDiag = function(player) {
-      //checks for diagonal wins
-      if (board[0][0] === player && board[1][1] === player && board[2][2] === player) {
-          winner = player;
-        console.log(winner + ' wins!');
-      }
-      else if (board[0][2] === player && board[1][1] === player && board[2][0] === player) {
-          winner = player;
-        console.log(winner + ' wins!');
-      }
+  //checks for diagonal wins
+  if ((board[0][0] === player &&
+      board[1][1] === player &&
+      board[2][2] === player) ||
+     (board[0][2] === player &&
+      board[1][1] === player &&
+      board[2][0] === player)) {
+    winner = player;
+  }
 };
 
-checkDiag('X');
+// var isWinner = function(player) {
+//   return checkCols(player) || checkRows(player) || checkDiag(player);
+// };
+
+var resetBoard = function(){
+  board = [['', '', ''],
+          ['', '', ''],
+          ['', '', '']];
+}
+
+//next steps
+// - change the above functions so that you don't need to manually pass in a parameter.
+// - create a master checkWinner function that incorporates the 3 functions above
+// - figure out whose turn it is with a function that calls the master checkWinner function. If nobody has won, determine whose turn is next.
+// - if someone has won
+
+
+//getWinner function includes these functions:
+  //isWinnerX - returns 'true' if X is the winner
+    //if isWinnerX, return x
+  //isWinnerO - returns 'true' if O is the winner
+    //if isWinnerO, return o
+  //else, return null
+
+  //isWinnerX calls checkRows, checkCols, checkDiag
 
