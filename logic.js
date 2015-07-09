@@ -54,8 +54,7 @@ either X or O:
 
 Other:
 - new game button clears board, sets all squares back to null.
-
-Below: Console Game Logic */
+ */
 
 'use strict'
 
@@ -65,9 +64,18 @@ var board = [['', '', ''],
 
 var currentTurn = 'X';
 
+var counter = 0;
+
 var playerMove = function (player, row, col) {
   board[row][col] = player;
   return board;
+};
+
+var getPieceAt = function (row, col) {
+    if (board[row][col] !== '') {
+      return board[row][col];
+    }
+      else return '';
 };
 
 var changeTurn = function () {
@@ -75,7 +83,7 @@ var changeTurn = function () {
     currentTurn = 'O';
   }
   else currentTurn = 'X';
-}
+};
 
 //to test for a horizontal win:
 // playerMove ('X', 0, 0);
@@ -160,21 +168,40 @@ var resetBoard = function(){
   board = [['', '', ''],
           ['', '', ''],
           ['', '', '']];
+  $('#board > div').html('');
 }
 
-//next steps
-// - change the above functions so that you don't need to manually pass in a parameter.
-// - create a master checkWinner function that incorporates the 3 functions above
-// - figure out whose turn it is with a function that calls the master checkWinner function. If nobody has won, determine whose turn is next.
-// - if someone has won
+//next steps:
+//deal with same square being clicked twice
+//deal with tie situation
+//jQ :(
 
+$(document).ready(function(){
+  $('#board > div').click(function(){
+    var clickedCell = $(this).attr("class");
+    var row = clickedCell[4];
+    var col = clickedCell[10];
+    // alert (row + ' ' + col);
+    // playerMove('TEST', row, col);
+    // console.log(board);
+    if (!getPieceAt(row, col)) {
+      playerMove(currentTurn, row, col);
+      $(this).html(currentTurn);
+      counter++;
+      if (getWinner()) {
+        alert ('The winner is ' + getWinner() + '!');
+        resetBoard();
+      }
+      if (counter === 9 && !getWinner()) {
+        alert ("It's a tie!");
+        resetBoard();
+      }
+      changeTurn();
+    } else {
+      alert ('This space is already taken! Please choose another square.');
+    }
 
-//getWinner function includes these functions:
-  //isWinnerX - returns 'true' if X is the winner
-    //if isWinnerX, return x
-  //isWinnerO - returns 'true' if O is the winner
-    //if isWinnerO, return o
-  //else, return null
+  });
 
-  //isWinnerX calls checkRows, checkCols, checkDiag
-
+//row-0 col-0
+});
