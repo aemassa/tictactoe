@@ -93,6 +93,23 @@ var board = [['a1', 'b1', 'c1'],
             ['a3', 'b3', 'c3']];
 
 var currentTurn = "X";
+var counter = 0;
+
+var getFirstMove = function(move) {
+    console.log('Hello, Player X! Please make your first move.');
+};
+
+var playerMove = function (player, row, col) {
+    if (board[row][col] !== "X" && board[row][col] !== "O") {
+    board[row][col] = player;
+    console.log ('Here is your move on the board:  ' + board);
+    } else {
+    //console.log ('That spot is already taken! Please choose another square.  ' + board);
+    }
+    return board;
+};
+
+playerMove ('X', 1, 1);
 
 var changeTurn = function(piece) {
     if (currentTurn == "X") {
@@ -104,6 +121,7 @@ var changeTurn = function(piece) {
       this.checkWin();
       currentTurn = "X";
     }
+    console.log
   };
 
 var checkRows = function() {
