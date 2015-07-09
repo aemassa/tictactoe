@@ -59,103 +59,96 @@ Below: Console Game Logic */
 
 'use strict'
 
-// //The first section of this file defines our variables.
-
-// //Creates empty board and stores it in a variable called "board":
-
-// var board = [['', '', ''],
-//             ['', '', ''],
-//             ['', '', '']];
-
-// //Sets the variable "winner":
-// var winner;
-
-
-
-// var playerMove = function (player, row, col) {
-//     board[row][col] = player;
-//     return board;
-// }
-
-// playerMove ('X', 1, 1);
-
-// var getPieceAt = function (row, col) {
-//     if (board[row][col] !== null) {
-//         return board[row][col];
-//     }
-//     else return null;
-// }
-
-// getPieceAt(1, 2);
-
-var board = [['a1', 'b1', 'c1'],
-            ['a2', 'b2', 'c2'],
-            ['a3', 'b3', 'c3']];
+var board = [['', '', ''],
+            ['', '', ''],
+            ['', '', '']];
 
 var currentTurn = "X";
 var counter = 0;
+var winner;
 
 var getFirstMove = function(move) {
     console.log('Hello, Player X! Please make your first move.');
 };
 
+//getFirstMove(); //RUN THIS FIRST
+
 var playerMove = function (player, row, col) {
-    if (board[row][col] !== "X" && board[row][col] !== "O") {
     board[row][col] = player;
-    console.log ('Here is your move on the board:  ' + board);
-    } else {
-    //console.log ('That spot is already taken! Please choose another square.  ' + board);
-    }
-    return board;
-};
+    //console.log ('Here is your move on the board:  ' + board);
+     return board;
+    };
 
-playerMove ('X', 1, 1);
+//to test for a horizontal win:
+// playerMove ('X', 0, 0);
+// playerMove ('O', 1, 1);
+// playerMove ('X', 0, 1);
+// playerMove ('O', 2, 0);
+// playerMove ('X', 0, 2);
 
-var changeTurn = function(piece) {
-    if (currentTurn == "X") {
-      //$("#" + piece).html("X");
-            this.checkWin();
-      currentTurn = "O";
-    } else {
-      //$("#" + piece).html("O");
-      this.checkWin();
-      currentTurn = "X";
-    }
-    console.log
-  };
+//to test for a vertical win:
+// playerMove ('X', 0, 0);
+// playerMove ('O', 0, 1);
+// playerMove ('X', 1, 0);
+// playerMove ('O', 1, 1);
+// playerMove ('X', 2, 0);
+// playerMove ('X', 2, 2);
 
-var checkRows = function() {
+//to test for a diagonal win:
+// playerMove ('X', 0, 0);
+// playerMove ('O', 0, 1);
+// playerMove ('X', 1, 1);
+// playerMove ('O', 0, 1);
+// playerMove ('X', 2, 2);
+
+
+var checkRows = function(player) {
       //checks for horizontal wins first
-      if (board[0][0] == player && board[0][1] == player && board[0][2] == player) {
-          console.log(currentTurn + 'wins!');
+      if (board[0][0] === player && board[0][1] === player && board[0][2] === player) {
+          winner = player;
+          console.log(winner + ' wins!');
       }
-      else if (board[1][0] == player && board[1][1] == player && board[1][2] == player) {
-          console.log(currentTurn + 'wins!');
+      else if (board[1][0] === player && board[1][1] === player && board[1][2] === player) {
+          winner = player;
+          console.log(winner + ' wins!');
       }
-      else if (board[2][0] == player && board[2][1] == player && board[2][2] == player) {
-          console.log(currentTurn + 'wins!');
+      else if (board[2][0] === player && board[2][1] === player && board[2][2] === player) {
+          winner = player;
+          console.log(winner + ' wins!');
       }
 };
 
-var checkCols = function() {
+checkRows('O');
+
+var checkCols = function(player) {
       //checks for vertical wins
-       if (board[0][0] == player && board[1][0] == player && board[2][0] == player) {
-          console.log(currentTurn + 'wins!');
+      if (board[0][0] === player && board[1][0] === player && board[2][0] === player) {
+          winner = player;
+        console.log(winner + ' wins!');
       }
-      else if (board[0][1] == player && board[1][1] == player && board[2][1] == player) {
-          console.log(currentTurn + 'wins!');
+      else if (board[0][1] === player && board[1][1] === player && board[2][1] === player) {
+          winner = player;
+        console.log(winner + ' wins!');
       }
-      else if (board[0][2] == player && board[1][2] == player && board[2][2] == player) {
-          console.log(currentTurn + 'wins!');
+      else if (board[0][2] === player && board[1][2] === player && board[2][2] === player) {
+          winner = player;
+        console.log(winner + ' wins!');
       }
 };
 
-var checkDiag = function() {
+checkCols('O');
+
+var checkDiag = function(player) {
       //checks for diagonal wins
-       if (board[0][0] == player && board[1][1] == player && board[2][2] == player) {
-          console.log(currentTurn + 'wins!');
+      if (board[0][0] === player && board[1][1] === player && board[2][2] === player) {
+          winner = player;
+        console.log(winner + ' wins!');
       }
-      else if (board[0][2] == player && board[1][1] == player && board[2][0] == player) {
-          console.log(currentTurn + 'wins!');
+      else if (board[0][2] === player && board[1][1] === player && board[2][0] === player) {
+          winner = player;
+        console.log(winner + ' wins!');
       }
 };
+
+checkDiag('X');
+
