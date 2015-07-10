@@ -1,0 +1,7 @@
+User Stories
+
+-  As a user, I can play a game of tic-tac-toe against a friend on my computer.
+-  As player X, I can place an X on the square of my choosing in order to play/win the game.
+-  As player O, I can place an O on a different square of my choosing in order to play/win the game.
+-  As a user, I can see who wins the game.
+-  As a user, I can automatically start a new game.
