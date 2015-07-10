@@ -10,8 +10,11 @@
   color: white;
 }
 
+body {
+  background-image: url(chalkboard.jpg);
+}
+
 #header {
-  background-color: orange;
   margin-bottom: 10px;
   font-size: 40px;
   height: 120px;
@@ -25,9 +28,10 @@
   width:600px;
   margin: 0 auto;
   padding: 10px;
-  background-color: black;
   position: relative;
   font-size: 80px;
+  background-image: url(gridc.png);
+  background-repeat: no-repeat;
 }
 
 #topleft {
