@@ -1,7 +1,7 @@
 # Tic-Tac-Toe Game
 
 Here is a link to a simple tic-tac-toe browser game:
-
+http://aemassa.github.io/tictactoe/
 
 ## Technologies Used
 
