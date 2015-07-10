@@ -29,3 +29,5 @@ Here is a link to a simple tic-tac-toe browser game:
 ## Initial Wireframe
 
 ## User Stories
+
+https://github.com/aemassa/tictactoe/blob/master/user_stories.txt
