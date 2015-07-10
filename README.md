@@ -26,7 +26,11 @@ Here is a link to a simple tic-tac-toe browser game:
 - I would like to add some features to the page, including a status bar, score keeper, and animations that "draw" the X's and O's on each square.
 
 
-## Initial Wireframe
+## Wireframe
+
+Initial wireframe: https://github.com/aemassa/tictactoe/blob/master/initial-wireframe.JPG
+
+Revised/simplified wireframe:  https://docs.google.com/drawings/d/1C5gSIwMpNxdVxOiG3OjiM98v5LhLPif3Kksvs6mglyw/edit
 
 ## User Stories
 
