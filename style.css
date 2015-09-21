@@ -21,11 +21,13 @@ body {
   text-align: center;
   line-height: 120px;
   font-size: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #board {
   height: 600px;
-  width:600px;
+  max-width:600px;
   margin: 0 auto;
   padding: 10px;
   position: relative;
